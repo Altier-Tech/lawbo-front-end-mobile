@@ -11,7 +11,6 @@ import '../../providers/signin_provider.dart';
 import 'forgotpwd_page.dart';
 import 'signup_page.dart';
 
-
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
 
@@ -36,7 +35,7 @@ class _SignInState extends State<SignIn> {
           builder: (BuildContext context, value, child) {
             return AuthBackground(
               size: size,
-              text1: "Log In",
+              text1: "Sign In",
               content: ListView(
                 children: [
                   CustomTextField(
@@ -80,9 +79,9 @@ class _SignInState extends State<SignIn> {
                       },
                       child: CustomPoppinsText(
                           text: "Forgot password?",
-                          color: Colors.grey.shade600,
-                          fsize: 16,
-                          fweight: FontWeight.w500),
+                          color: Colors.black,
+                          fsize: 18,
+                          fweight: FontWeight.w600),
                     ),
                   ),
                   const SizedBox(
@@ -94,9 +93,9 @@ class _SignInState extends State<SignIn> {
                       Provider.of<SignInProvider>(context, listen: false)
                           .signInUser(context);
                     },
-                    text: "Log In",
-                    buttonColor: Colors.grey.shade900,
-                    textColor: Colors.white,
+                    text: "Sign In",
+                    buttonColor: Colors.amber,
+                    textColor: Colors.black,
                   ),
                   const SizedBox(
                     height: 15,
@@ -106,14 +105,14 @@ class _SignInState extends State<SignIn> {
                     children: [
                       CustomPoppinsText(
                           text: "Don't have an account?",
-                          color: Colors.grey.shade600,
+                          color: Colors.black,
                           fsize: 16,
                           fweight: FontWeight.w500),
                       GestureDetector(
                         child: CustomPoppinsText(
-                            text: "Sign Up",
-                            color: Colors.grey.shade900,
-                            fsize: 16,
+                            text: "  Sign Up",
+                            color: Colors.black,
+                            fsize: 18,
                             fweight: FontWeight.bold),
                         onTap: () {
                           showDialog(
@@ -144,41 +143,55 @@ class _SignInState extends State<SignIn> {
                   ),
                   Row(
                     children: [
-                      const Expanded(child: Divider(thickness: 2)),
+                      const Expanded(
+                          child: Divider(
+                        thickness: 2,
+                        color: Colors.black,
+                      )),
                       CustomPoppinsText(
                           text: "  Or login with  ",
-                          color: Colors.grey.shade600,
+                          color: Colors.black,
                           fsize: 16,
                           fweight: FontWeight.w500),
-                      const Expanded(child: Divider(thickness: 2)),
+                      const Expanded(
+                          child: Divider(
+                        thickness: 2,
+                        color: Colors.black,
+                      )),
                     ],
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  Container(
-                    height: 40,
-                    width: size.width * 0.8,
-                    decoration: const BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(Radius.circular(25))),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Icon(Icons.mail),
-                          GestureDetector(
-                            child: CustomPoppinsText(
+                  GestureDetector(
+                    onTap: () {
+                      Provider.of<SignInProvider>(context, listen: false)
+                          .signInWithGoogle();
+                    },
+                    child: Container(
+                      height: 40,
+                      width: size.width * 0.8,
+                      decoration: BoxDecoration(
+                          color: Colors.amber.shade300,
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(25))),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            //const Icon(Icons.mail),
+                            const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Image(
+                                  image: AssetImage('lib/assets/google.png'),
+                                  width: 30),
+                            ),
+                            CustomPoppinsText(
                                 text: " Continue with google",
                                 color: Colors.black,
                                 fsize: 16,
-                                fweight: FontWeight.w600),
-                            onTap: () {
-                              Provider.of<SignInProvider>(context,
-                                      listen: false)
-                                  .signInWithGoogle();
-                            },
-                          )
-                        ]),
+                                fweight: FontWeight.w600)
+                          ]),
+                    ),
                   )
                 ],
               ),

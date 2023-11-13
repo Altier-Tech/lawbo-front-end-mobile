@@ -36,7 +36,7 @@ class ForgotPassword extends StatelessWidget {
                         .recoveryEmailController,
                     prefix: Icons.mail_outline),
                 const SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 CustomButton(
                   size: size,
@@ -45,8 +45,8 @@ class ForgotPassword extends StatelessWidget {
                         .sendResetEmail(context);
                   },
                   text: "Reset password",
-                  buttonColor: Colors.grey.shade900,
-                  textColor: Colors.white,
+                  buttonColor: Colors.amber,
+                  textColor: Colors.black,
                 )
               ],
             ),

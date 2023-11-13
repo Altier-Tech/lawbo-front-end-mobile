@@ -14,8 +14,8 @@ class _TrafficLawsPageState extends State<TrafficLawsPage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.grey.shade900,
-          iconTheme: const IconThemeData(color: Colors.white),
+          backgroundColor: Colors.amber,
+          iconTheme: const IconThemeData(color: Colors.black),
         ),
         body: Column(
           children: [
@@ -27,6 +27,8 @@ class _TrafficLawsPageState extends State<TrafficLawsPage> {
               child: SearchAnchor(
                 builder: (BuildContext context, SearchController controller) {
                   return SearchBar(
+                    backgroundColor:
+                        MaterialStatePropertyAll(Colors.amber.shade100),
                     hintText: 'type here',
                     controller: controller,
                     padding: const MaterialStatePropertyAll<EdgeInsets>(
@@ -37,7 +39,10 @@ class _TrafficLawsPageState extends State<TrafficLawsPage> {
                     onChanged: (_) {
                       controller.openView();
                     },
-                    leading: const Icon(Icons.search),
+                    leading: const Icon(
+                      Icons.search,
+                      color: Colors.black,
+                    ),
                     trailing: <Widget>[
                       TextButton(
                         onPressed: () {
@@ -46,11 +51,9 @@ class _TrafficLawsPageState extends State<TrafficLawsPage> {
                           print(controller.text);
                           // Add your search logic here
                         },
-                        child: Text(
+                        child: const Text(
                           'Search',
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.secondary,
-                          ),
+                          style: TextStyle(color: Colors.black, fontSize: 18),
                         ),
                       ),
                     ],

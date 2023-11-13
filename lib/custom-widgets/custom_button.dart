@@ -25,12 +25,12 @@ class CustomButton extends StatelessWidget {
           width: size.width * 0.8,
           height: 55,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15), color: buttonColor),
+              borderRadius: BorderRadius.circular(20), color: buttonColor),
           child: Center(
             child: CustomPoppinsText(
                 color: textColor,
-                fsize: 20,
-                fweight: FontWeight.w500,
+                fsize: 25,
+                fweight: FontWeight.bold,
                 text: text),
           )),
     );

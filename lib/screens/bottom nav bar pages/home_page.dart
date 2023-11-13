@@ -19,23 +19,21 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.grey.shade900,
-        title: Center(
-          child: CustomPoppinsText(
-              text: "LawBo",
-              color: Colors.white,
-              fsize: 30,
-              fweight: FontWeight.w600),
-        ),
+        backgroundColor: Colors.amber,
+        title: CustomPoppinsText(
+            text: "LawBo",
+            color: Colors.black,
+            fsize: 25,
+            fweight: FontWeight.w600),
       ),
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomContainer(
-              width: size.width * 0.4,
-              height: size.width * 0.4,
-              color: Colors.purpleAccent,
+              width: size.width * 0.45,
+              height: size.width * 0.45,
+              color: Colors.amber.shade400,
               text: "Traffic laws",
               ontap: () {
                 Future.delayed(
@@ -49,19 +47,19 @@ class _HomePageState extends State<HomePage> {
                     CircularIndicator(isVisible: false);
                   },
                 );
-              },
+              }, fsize: 23,
             ),
             const SizedBox(
               width: 5,
             ),
             CustomContainer(
-              width: size.width * 0.4,
-              height: size.width * 0.4,
-              color: Colors.purpleAccent,
+              width: size.width * 0.45,
+              height: size.width * 0.45,
+              color: Colors.amber.shade400,
               text: "Criminal laws",
               ontap: () {
                 CircularIndicator(isVisible: true);
-
+            
                 Future.delayed(
                   const Duration(seconds: 3),
                   () {
@@ -73,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                     CircularIndicator(isVisible: false);
                   },
                 );
-              },
+              }, fsize: 23,
             ),
           ],
         ),

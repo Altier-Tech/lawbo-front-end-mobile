@@ -25,30 +25,30 @@ class AuthBackground extends StatelessWidget {
           Container(
             height: size.height * 0.4,
             width: size.width,
-            decoration: BoxDecoration(
-              color: Colors.grey.shade900,
+            decoration: const BoxDecoration(
+              color: Colors.amber,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: size.height * 0.25,
+                  height: size.height * 0.24,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: CustomPoppinsText(
                       text: text1,
-                      color: Colors.white,
-                      fsize: 25,
-                      fweight: FontWeight.w500),
+                      color: Colors.black,
+                      fsize: 28,
+                      fweight: FontWeight.w600),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: CustomPoppinsText(
                       text: text2,
-                      color: Colors.white,
+                      color: Colors.black,
                       fsize: 15,
-                      fweight: FontWeight.w300),
+                      fweight: FontWeight.w500),
                 ),
               ],
             ),

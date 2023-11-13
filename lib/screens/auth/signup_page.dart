@@ -63,9 +63,9 @@ class SignUpPage extends StatelessWidget {
                     Provider.of<SignUpProvider>(context, listen: false)
                         .signUpUser();
                   },
-                  text: 'Create account',
-                  buttonColor: Colors.grey.shade900,
-                  textColor: Colors.white,
+                  text: 'Sign Up',
+                  buttonColor: Colors.amber,
+                  textColor: Colors.black,
                 )
               ]),
               text1: "Sign Up",

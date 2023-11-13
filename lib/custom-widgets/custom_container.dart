@@ -8,13 +8,15 @@ class CustomContainer extends StatelessWidget {
       required this.height,
       required this.color,
       required this.text,
-      required this.ontap});
+      required this.ontap,
+      required this.fsize});
 
   double width;
   double height;
   Color color;
   String text;
   VoidCallback ontap;
+  double fsize;
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +27,16 @@ class CustomContainer extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-          color: color,
-          borderRadius: const BorderRadiusDirectional.all(Radius.circular(10)),
-        ),
+            color: color,
+            borderRadius:
+                const BorderRadiusDirectional.all(Radius.circular(10)),
+            border: Border.all(width: 3, color: Colors.amber.shade700)),
         child: Center(
           child: CustomPoppinsText(
               text: text,
-              color: Colors.white,
-              fsize: 20,
-              fweight: FontWeight.w500),
+              color: Colors.black,
+              fsize: fsize,
+              fweight: FontWeight.w600),
         ),
       ),
     );

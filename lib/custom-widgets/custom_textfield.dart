@@ -24,11 +24,19 @@ class _CustomTextFieldState extends State<CustomTextField> {
     final size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: TextFormField(
+      child: TextField(
+          cursorColor: Colors.amber,
           controller: widget.controller,
           obscureText: widget.isPassword == false ? !isObscure : isObscure,
           decoration: InputDecoration(
-              border: const OutlineInputBorder(),
+              enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                color: Colors.amber,
+                width: 2,
+              )),
+              
+              focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.amber)),
               label: Text(widget.label),
               prefixIcon: Icon(widget.prefix),
               suffixIcon: widget.isPassword == true

@@ -4,7 +4,6 @@ import 'package:lawbo/custom-widgets/custom_text.dart';
 
 import '../../custom-widgets/custom_button.dart';
 
-
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
@@ -20,31 +19,30 @@ class _ProfilePageState extends State<ProfilePage> {
       body: Container(
         height: size.height,
         width: size.width,
-        decoration: BoxDecoration(color: Colors.grey.shade300),
+        decoration: BoxDecoration(color: Colors.grey.shade200),
         child: Column(
           children: [
             Container(
               height: size.height * 0.2,
               width: size.width,
-              decoration: BoxDecoration(
-                  color: Colors.grey.shade900,
-                  borderRadius: const BorderRadius.only(
+              decoration: const BoxDecoration(
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(15),
                       bottomRight: Radius.circular(15))),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const CircleAvatar(
-                    backgroundImage: AssetImage("lib/assets/profile.png"),
-                    radius: 20,
-                  ),
+                      backgroundImage: AssetImage("lib/assets/profile.png"),
+                      radius: 35),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: CustomPoppinsText(
                         text: "lawbo@gmail.com",
-                        color: Colors.white,
-                        fsize: 15,
-                        fweight: FontWeight.w400),
+                        color: Colors.black,
+                        fsize: 20,
+                        fweight: FontWeight.w600),
                   )
                 ],
               ),
@@ -67,7 +65,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             text: 'Upgrade to premium',
                             color: Colors.black,
                             fsize: 20,
-                            fweight: FontWeight.w500),
+                            fweight: FontWeight.w600),
                       ],
                     ),
                   ),
@@ -86,7 +84,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             text: 'Settings',
                             color: Colors.black,
                             fsize: 20,
-                            fweight: FontWeight.w500),
+                            fweight: FontWeight.w600),
                       ],
                     ),
                   ),
@@ -101,7 +99,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     height: 30,
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(20.0),
                     child: CustomButton(
                         size: size,
                         ontap: () {
@@ -112,9 +110,9 @@ class _ProfilePageState extends State<ProfilePage> {
                             },
                           );
                         },
-                        text: "Log Out",
-                        buttonColor: Colors.grey.shade900,
-                        textColor: Colors.white),
+                        text: "Sign Out",
+                        buttonColor: Colors.amber,
+                        textColor: Colors.black),
                   ),
                 ],
               ),
