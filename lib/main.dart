@@ -1,13 +1,29 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:lawbo/firebase_options.dart';
+import 'package:lawbo/providers/signin_provider.dart';
+import 'package:lawbo/providers/signup_provider.dart';
 import 'package:lawbo/screens/splash%20screen/splash_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(
+        create: (context) => SignUpProvider(),
+        child: const MyApp(),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => SignInProvider(),
+      ),
+    ],
+    child: const MyApp(),
+  ));
+  const MyApp();
 }
 
 class MyApp extends StatelessWidget {

@@ -9,7 +9,7 @@ import 'package:logger/logger.dart';
 
 import '../custom-widgets/circular_indicator.dart';
 import '../screens/auth/sign_in_page.dart';
-import '../screens/home_page.dart';
+import '../screens/main screen/main_screen.dart';
 
 class AuthController {
   //Check auth state
@@ -31,7 +31,7 @@ class AuthController {
           Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const HomePage(),
+                builder: (context) => const MainScreen(),
               ));
 
           print('User is signed in!');

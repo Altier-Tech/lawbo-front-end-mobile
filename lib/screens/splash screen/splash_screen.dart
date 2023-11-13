@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lawbo/custom-widgets/custom_text.dart';
 
 import '../../controllers/auth_controlller.dart';
 
@@ -29,11 +30,17 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "lib/assets/download.png",
-                  width: size.width * 0.5,
-                  height: size.height * 0.5,
-                ),
+                // Image.asset(
+                //   "lib/assets/download.png",
+                //   width: size.width * 0.5,
+                //   height: size.height * 0.5,
+                // ),
+
+                CustomPoppinsText(
+                    text: "LawBo",
+                    color: Colors.black,
+                    fsize: 30,
+                    fweight: FontWeight.bold)
               ],
             ),
           ),

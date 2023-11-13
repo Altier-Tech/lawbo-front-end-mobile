@@ -10,7 +10,7 @@ class CircularIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Visibility(
       visible: isVisible,
-      child: const CircularProgressIndicator(),
+      child: const CircularProgressIndicator(color: Colors.black),
     );
   }
 }

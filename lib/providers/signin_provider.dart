@@ -49,7 +49,7 @@ class SignInProvider extends ChangeNotifier {
             msg: "Email sent to ${_recoveryEmailController.text}",
             toastLength: Toast.LENGTH_SHORT,
             gravity: ToastGravity.SNACKBAR,
-            timeInSecForIosWeb: 5,
+            timeInSecForIosWeb: 2,
             backgroundColor: Colors.blueAccent,
             textColor: Colors.white,
             fontSize: 16.0);

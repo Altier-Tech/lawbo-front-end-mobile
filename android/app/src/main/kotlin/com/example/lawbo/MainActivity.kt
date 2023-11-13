@@ -1,4 +1,4 @@
-package com.example.lawbo
+package lk.altier.lawbo
 
 import io.flutter.embedding.android.FlutterActivity
 
