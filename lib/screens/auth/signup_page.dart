@@ -7,10 +7,10 @@ import '../../custom-widgets/custom_textfield.dart';
 import '../../providers/signup_provider.dart';
 import 'sign_in_page.dart';
 
-
 class SignUpPage extends StatelessWidget {
   SignUpPage({super.key});
 
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
@@ -19,7 +19,7 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    
+
     return WillPopScope(
       onWillPop: () async {
         Navigator.push(
@@ -34,6 +34,9 @@ class SignUpPage extends StatelessWidget {
           body: AuthBackground(
               size: size,
               content: ListView(children: [
+                CustomTextField(
+                    label: "Name", controller: Provider.of<SignUpProvider>(context)
+                                .nameController, prefix: Icons.person),
                 CustomTextField(
                   label: 'Email',
                   controller:

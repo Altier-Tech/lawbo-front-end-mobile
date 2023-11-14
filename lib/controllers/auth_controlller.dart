@@ -8,6 +8,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:logger/logger.dart';
 
 import '../custom-widgets/circular_indicator.dart';
+import '../models/user_model.dart';
 import '../screens/auth/sign_in_page.dart';
 import '../screens/main screen/main_screen.dart';
 
@@ -114,10 +115,10 @@ class AuthController {
 
 //create user account using email and password
 
-  Future<void> createUserAccount({
-    required String email,
-    required String password,
-  }) async {
+  Future<void> createUserAccount(
+      {required String email,
+      required String password,
+      required String name}) async {
     try {
       final credential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(
@@ -125,7 +126,7 @@ class AuthController {
         password: password,
       )
           .then((value) {
-        addUser(value.user!.uid, email);
+        addUser(value.user!.uid, name, email);
       });
       CircularIndicator(isVisible: false);
       Logger().i('Successfully Created Account');
@@ -184,12 +185,22 @@ class AuthController {
 
   CollectionReference users = FirebaseFirestore.instance.collection('users');
 
-  Future<void> addUser(String uid, String email) {
+  Future<void> addUser(String uid, String email, String name) {
     return users
         .doc(uid)
-        .set({'uid': uid, 'email': email})
+        .set({'uid': uid, 'email': email, "name": name})
         .then((value) => Logger().i("User added"))
         .catchError((e) => Logger().e(e));
+  }
+
+  //fetch user data
+  Future<UserModel?> getUserData(String uid) async {
+    try {
+      DocumentSnapshot userData = await users.doc(uid).get();
+      return UserModel.fromMap(userData.data() as Map<String, dynamic>);
+    } catch (e) {
+      return null;
+    }
   }
 
   //Google Authentication

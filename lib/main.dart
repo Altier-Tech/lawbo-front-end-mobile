@@ -1,8 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:lawbo/firebase_options.dart';
+import 'package:lawbo/providers/profile_provider.dart';
 import 'package:lawbo/providers/signin_provider.dart';
 import 'package:lawbo/providers/signup_provider.dart';
+import 'package:lawbo/providers/user_provider.dart';
 import 'package:lawbo/screens/splash%20screen/splash_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -19,6 +21,12 @@ void main() async {
       ),
       ChangeNotifierProvider(
         create: (context) => SignInProvider(),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => UserProvider(),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => ProfileProvider(),
       ),
     ],
     child: const MyApp(),

@@ -9,10 +9,23 @@
       "client_info": {
         "mobilesdk_app_id": "1:250840460025:android:6671bac333ffd6ea94d028",
         "android_client_info": {
-          "package_name": "lk.altier.lawbo"
+          "package_name": "com.example.lawbo"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "250840460025-k2lpu5l2ckat6210d23725h7em5ru36k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lawbo",
+            "certificate_hash": "d84a2783e468bb1c16719f4205819c654b136183"
+          }
+        },
+        {
+          "client_id": "250840460025-ls647ek9a5jdnq1u47871fkjdcpvuvv6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCmW2vhSIGwAuJbiv3BKI-rAmt1g6-s77w"
@@ -20,7 +33,41 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "250840460025-ls647ek9a5jdnq1u47871fkjdcpvuvv6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250840460025:android:abacbd7b4554e93294d028",
+        "android_client_info": {
+          "package_name": "lk.altier.lawbo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "250840460025-ls647ek9a5jdnq1u47871fkjdcpvuvv6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmW2vhSIGwAuJbiv3BKI-rAmt1g6-s77w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "250840460025-ls647ek9a5jdnq1u47871fkjdcpvuvv6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

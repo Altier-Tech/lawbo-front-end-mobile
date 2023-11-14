@@ -47,7 +47,8 @@ class _HomePageState extends State<HomePage> {
                     CircularIndicator(isVisible: false);
                   },
                 );
-              }, fsize: 23,
+              },
+              fsize: 23,
             ),
             const SizedBox(
               width: 5,
@@ -59,7 +60,7 @@ class _HomePageState extends State<HomePage> {
               text: "Criminal laws",
               ontap: () {
                 CircularIndicator(isVisible: true);
-            
+
                 Future.delayed(
                   const Duration(seconds: 3),
                   () {
@@ -71,7 +72,8 @@ class _HomePageState extends State<HomePage> {
                     CircularIndicator(isVisible: false);
                   },
                 );
-              }, fsize: 23,
+              },
+              fsize: 23,
             ),
           ],
         ),
