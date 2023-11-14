@@ -25,6 +25,7 @@ class _MainScreenState extends State<MainScreen> {
     return SafeArea(
       child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
+            backgroundColor: Colors.grey.shade300,
             selectedItemColor: Colors.amber,
             unselectedItemColor: Colors.grey.shade900,
             currentIndex: currentIndex,

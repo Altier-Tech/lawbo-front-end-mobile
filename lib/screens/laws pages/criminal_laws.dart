@@ -9,8 +9,8 @@ class CriminalLawsPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.grey.shade900,
-          iconTheme: const IconThemeData(color: Colors.white),
+          backgroundColor: Colors.amber,
+          iconTheme: const IconThemeData(color: Colors.black),
         ),
         body: Column(
           children: [
@@ -22,6 +22,8 @@ class CriminalLawsPage extends StatelessWidget {
               child: SearchAnchor(
                 builder: (BuildContext context, SearchController controller) {
                   return SearchBar(
+                    backgroundColor:
+                        MaterialStatePropertyAll(Colors.amber.shade100),
                     hintText: 'type here',
                     controller: controller,
                     padding: const MaterialStatePropertyAll<EdgeInsets>(

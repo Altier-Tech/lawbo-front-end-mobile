@@ -31,48 +31,52 @@ class SignUpPage extends StatelessWidget {
       },
       child: SafeArea(
         child: Scaffold(
-          body: AuthBackground(
-              size: size,
-              content: ListView(children: [
-                CustomTextField(
-                    label: "Name", controller: Provider.of<SignUpProvider>(context)
-                                .nameController, prefix: Icons.person),
-                CustomTextField(
-                  label: 'Email',
-                  controller:
-                      Provider.of<SignUpProvider>(context).emailController,
-                  prefix: Icons.email_outlined,
-                ),
-                CustomTextField(
-                  isPassword: true,
-                  label: 'Password',
-                  controller:
-                      Provider.of<SignUpProvider>(context).passwordController,
-                  prefix: Icons.lock_outline,
-                ),
-                CustomTextField(
-                  isPassword: true,
-                  label: 'Confirm password',
-                  controller: Provider.of<SignUpProvider>(context)
-                      .confirmPasswordController,
-                  prefix: Icons.lock_outline,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                CustomButton(
-                  size: size,
-                  ontap: () {
-                    Provider.of<SignUpProvider>(context, listen: false)
-                        .signUpUser();
-                  },
-                  text: 'Sign Up',
-                  buttonColor: Colors.amber,
-                  textColor: Colors.black,
-                )
-              ]),
-              text1: "Sign Up",
-              text2: 'Enter your details below & free sign up'),
+          body: SingleChildScrollView(
+            child: AuthBackground(
+                size: size,
+                content: ListView(children: [
+                  CustomTextField(
+                      label: "Name",
+                      controller:
+                          Provider.of<SignUpProvider>(context).nameController,
+                      prefix: Icons.person),
+                  CustomTextField(
+                    label: 'Email',
+                    controller:
+                        Provider.of<SignUpProvider>(context).emailController,
+                    prefix: Icons.email_outlined,
+                  ),
+                  CustomTextField(
+                    isPassword: true,
+                    label: 'Password',
+                    controller:
+                        Provider.of<SignUpProvider>(context).passwordController,
+                    prefix: Icons.lock_outline,
+                  ),
+                  CustomTextField(
+                    isPassword: true,
+                    label: 'Confirm password',
+                    controller: Provider.of<SignUpProvider>(context)
+                        .confirmPasswordController,
+                    prefix: Icons.lock_outline,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  CustomButton(
+                    size: size,
+                    ontap: () {
+                      Provider.of<SignUpProvider>(context, listen: false)
+                          .signUpUser();
+                    },
+                    text: 'Sign Up',
+                    buttonColor: Colors.amber,
+                    textColor: Colors.black,
+                  )
+                ]),
+                text1: "Sign Up",
+                text2: 'Enter your details below & free sign up'),
+          ),
         ),
       ),
     );

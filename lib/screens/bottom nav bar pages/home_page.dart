@@ -27,53 +27,87 @@ class _HomePageState extends State<HomePage> {
             fweight: FontWeight.w600),
       ),
       body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            CustomContainer(
-              width: size.width * 0.45,
-              height: size.width * 0.45,
-              color: Colors.amber.shade400,
-              text: "Traffic laws",
-              ontap: () {
-                Future.delayed(
-                  const Duration(seconds: 3),
-                  () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const TrafficLawsPage(),
-                        ));
-                    CircularIndicator(isVisible: false);
+            SizedBox(
+              height: size.height * 0.1,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomPoppinsText(
+                  text: "You can use ky words from help page also:",
+                  color: Colors.black,
+                  fsize: 20,
+                  fweight: FontWeight.w600),
+            ),
+            SizedBox(
+              height: size.height * 0.1,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomContainer(
+                  width: size.width * 0.45,
+                  height: size.width * 0.45,
+                  color: Colors.amber.shade400,
+                  text: "Traffic laws",
+                  ontap: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return Center(
+                          child: CircularIndicator(isVisible: true),
+                        );
+                      },
+                    );
+                    Future.delayed(
+                      const Duration(seconds: 3),
+                      () {
+                        Navigator.pop(context);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const TrafficLawsPage(),
+                            ));
+                      },
+                    );
                   },
-                );
-              },
-              fsize: 23,
-            ),
-            const SizedBox(
-              width: 5,
-            ),
-            CustomContainer(
-              width: size.width * 0.45,
-              height: size.width * 0.45,
-              color: Colors.amber.shade400,
-              text: "Criminal laws",
-              ontap: () {
-                CircularIndicator(isVisible: true);
+                  fsize: 23,
+                ),
+                const SizedBox(
+                  width: 5,
+                ),
+                CustomContainer(
+                  width: size.width * 0.45,
+                  height: size.width * 0.45,
+                  color: Colors.amber.shade400,
+                  text: "Criminal laws",
+                  ontap: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return Center(
+                          child: CircularIndicator(isVisible: true),
+                        );
+                      },
+                    );
 
-                Future.delayed(
-                  const Duration(seconds: 3),
-                  () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const CriminalLawsPage(),
-                        ));
-                    CircularIndicator(isVisible: false);
+                    Future.delayed(
+                      const Duration(seconds: 3),
+                      () {
+                        Navigator.pop(context);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const CriminalLawsPage(),
+                            ));
+                      },
+                    );
                   },
-                );
-              },
-              fsize: 23,
+                  fsize: 23,
+                ),
+              ],
             ),
           ],
         ),
