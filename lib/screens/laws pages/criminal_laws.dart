@@ -1,7 +1,16 @@
+
 import 'package:flutter/material.dart';
 
-class CriminalLawsPage extends StatelessWidget {
-  const CriminalLawsPage({super.key});
+class CriminalLawsPage extends StatefulWidget {
+  const CriminalLawsPage({Key? key}) : super(key: key);
+
+  @override
+  State<CriminalLawsPage> createState() => _CriminalLawsPageState();
+}
+
+class _CriminalLawsPageState extends State<CriminalLawsPage> {
+  List<String> previousTexts = [];
+  List<String> currentSuggestions = [];
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +42,20 @@ class CriminalLawsPage extends StatelessWidget {
                     },
                     onChanged: (_) {
                       controller.openView();
+                      // Update suggestions based on the current input
+                      setState(() {
+                        // Filter previousTexts based on the current input
+                        currentSuggestions = previousTexts
+                            .where((text) => text
+                                .toLowerCase()
+                                .contains(controller.text.toLowerCase()))
+                            .toList();
+                      });
                     },
-                    leading: const Icon(Icons.search),
+                    leading: const Icon(
+                      Icons.search,
+                      color: Colors.black,
+                    ),
                     trailing: <Widget>[
                       TextButton(
                         onPressed: () {
@@ -42,12 +63,13 @@ class CriminalLawsPage extends StatelessWidget {
                           print("Search button pressed");
                           print(controller.text);
                           // Add your search logic here
+                          if (!previousTexts.contains(controller.text)) {
+                            previousTexts.add(controller.text);
+                          }
                         },
-                        child: Text(
+                        child: const Text(
                           'Search',
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.secondary,
-                          ),
+                          style: TextStyle(color: Colors.black, fontSize: 18),
                         ),
                       ),
                     ],
@@ -55,12 +77,13 @@ class CriminalLawsPage extends StatelessWidget {
                 },
                 suggestionsBuilder:
                     (BuildContext context, SearchController controller) {
-                  return List<ListTile>.generate(5, (int index) {
-                    final String recent = 'Law $index';
+                  return List<ListTile>.generate(currentSuggestions.length,
+                      (int index) {
+                    final String suggestion = currentSuggestions[index];
                     return ListTile(
-                      title: Text(recent),
+                      title: Text(suggestion),
                       onTap: () {
-                        controller.closeView(recent);
+                        controller.closeView(suggestion);
                       },
                     );
                   });
